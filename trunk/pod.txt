@@ -1,0 +1,37 @@
+NAME
+    CGI::Application::Plugin::CompressGzip - Add Gzip compression to
+    CGI::Application
+
+WARNING
+    This is the initial release. I've not added any support for options or
+    configuration, because CGI::Compress::Gzip works for me out of the box.
+
+SYNOPSIS
+        use CGI::Application::Plugin::CompressGzip;
+
+        my $query = $self->query;
+  
+DESCRIPTION
+    This plugin automatically enables gzip compression in your
+    CGI::Application program. You "use" it once in your base class, and the
+    rest is transparent.
+
+    It does its work by overriding cgiapp_get_query, which returns a new
+    CGI::Compress::Gzip object instead of the default CGI object.
+
+  EXPORT
+    cgiapp_get_query
+
+SEE ALSO
+    CGI::Application, CGI::Compress::Gzip
+
+AUTHOR
+    Rhesa Rozendaal <rhesa@cpan.orge<gt>
+
+COPYRIGHT AND LICENSE
+    Copyright (C) 2005 by Rhesa Rozendaal
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself, either Perl version 5.8.2 or, at
+    your option, any later version of Perl 5 you may have available.
+
