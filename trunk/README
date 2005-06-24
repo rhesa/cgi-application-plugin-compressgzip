@@ -1,4 +1,4 @@
-CGI-Application-Plugin-CompressGzip version 0.01
+CGI-Application-Plugin-CompressGzip version 0.02
 ================================================
 
 NAME
@@ -14,8 +14,9 @@ SYNOPSIS
     my $query = $self->query;
 
 DESCRIPTION
-    This plugin automatically enables gzip compression in your CGI::Application program.
-    You "use" it once in your base class, and the rest is transparent.
+    This plugin automatically enables gzip compression in your CGI::Application
+	program where appropriate. You "use" it once in your base class, and the rest
+	is transparent.
 
     It does its work by overriding cgiapp_get_query, which returns a new
     CGI::Compress::Gzip object instead of the default CGI object.

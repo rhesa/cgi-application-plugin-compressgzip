@@ -7,15 +7,13 @@ use warnings;
 use CGI::Application 3.21;
 use CGI::Compress::Gzip 0.19;
 
-require Exporter;
-
-our @ISA = qw(Exporter);
+use base qw/Exporter/;
 
 our @EXPORT = qw(
     cgiapp_get_query
 );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub cgiapp_get_query {
@@ -23,16 +21,12 @@ sub cgiapp_get_query {
 }
 
 1;
+
 __END__
 
 =head1 NAME
 
 CGI::Application::Plugin::CompressGzip - Add gzip compression to CGI::Application
-
-=head1 WARNING
-
-This is the initial release. I haven't added any support for options or configuration,
-because CGI::Compress::Gzip works for me out of the box.
 
 =head1 SYNOPSIS
 
@@ -48,8 +42,9 @@ because CGI::Compress::Gzip works for me out of the box.
   
 =head1 DESCRIPTION
 
-This plugin automatically enables gzip compression in your CGI::Application program.
-You "use" it once in your base class, and the rest is transparent.
+This plugin automatically enables gzip compression in your CGI::Application
+program where appropriate. You "use" it once in your base class, and the rest
+is transparent.
 
 It does its work by overriding cgiapp_get_query, which returns a new
 CGI::Compress::Gzip object instead of the default CGI object.
