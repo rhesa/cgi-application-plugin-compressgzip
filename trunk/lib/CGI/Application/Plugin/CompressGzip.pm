@@ -13,8 +13,7 @@ our @EXPORT = qw(
     cgiapp_get_query
 );
 
-our $VERSION = '0.02';
-
+our $VERSION = '0.03';
 
 sub cgiapp_get_query {
     return CGI::Compress::Gzip->new();
@@ -42,16 +41,23 @@ CGI::Application::Plugin::CompressGzip - Add gzip compression to CGI::Applicatio
   
 =head1 DESCRIPTION
 
-This plugin automatically enables gzip compression in your CGI::Application
-program where appropriate. You "use" it once in your base class, and the rest
-is transparent.
+This plugin automatically enables gzip content encoding in your CGI::Application
+program where appropriate. This reduces bandwidth, which is good for your server,
+and for your site's responsiveness. You "use" it once in your base class, and
+the rest is transparent.
 
 It does its work by overriding cgiapp_get_query, which returns a new
 CGI::Compress::Gzip object instead of the default CGI object.
 
-=head2 EXPORT
+=head1 EXPORTS
 
-cgiapp_get_query
+=over
+
+=item cgiapp_get_query
+
+	Returns a subclassed CGI object.
+
+=back
 
 =head1 SEE ALSO
 
@@ -69,5 +75,5 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.2 or,
 at your option, any later version of Perl 5 you may have available.
 
-
 =cut
+

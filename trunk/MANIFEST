@@ -1,7 +1,9 @@
 Changes
+lib/CGI/Application/Plugin/CompressGzip.pm
 Makefile.PL
 MANIFEST
+META.yml			Module meta-data (added by MakeMaker)
 README
+t/01_pod.t
+t/01_pod_coverage.t
 t/CGI-Application-Plugin-CompressGzip.t
-lib/CGI/Application/Plugin/CompressGzip.pm
-META.yml                                 Module meta-data (added by MakeMaker)
