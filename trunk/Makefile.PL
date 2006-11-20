@@ -5,6 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'CGI::Application::Plugin::CompressGzip',
     VERSION_FROM      => 'lib/CGI/Application/Plugin/CompressGzip.pm', # finds $VERSION
+    LICENSE           => 'perl',
     PREREQ_PM         => {
         CGI::Application => 3.21,
         CGI::Compress::Gzip => 0.19,
