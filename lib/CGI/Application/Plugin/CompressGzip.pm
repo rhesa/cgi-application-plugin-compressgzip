@@ -13,8 +13,6 @@ our @EXPORT = qw(
     cgiapp_get_query
 );
 
-our $VERSION = '1.00';
-
 sub cgiapp_get_query {
     return CGI::Compress::Gzip->new();
 }
